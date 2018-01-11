@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react'
+import React from 'react'
 
 export default function Number({number, letters, handleOnClick, highlight}) {
   let textClass = 'numberpad__number__text'

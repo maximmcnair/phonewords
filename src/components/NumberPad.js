@@ -28,7 +28,7 @@ export default class NumberPad extends PureComponent {
             number={num.number}
             letters={num.letters}
             handleOnClick={() => {handleOnClick(num.number)}}
-            highlight={num === '*' || num === '#'}
+            highlight={num.number === '*' || num.number === '#'}
           />
         ))}
       </div>

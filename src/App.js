@@ -1,17 +1,17 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 
 import NumberPad from './components/NumberPad'
 import NumberInput from './components/NumberInput'
 import NumberClear from './components/NumberClear'
 import Phonewords from './components/Phonewords'
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super()
     this.state = {
       numbers: '',
       phonewords: [],
+      error: false,
     }
 
     this.handleInput = this.handleInput.bind(this)
@@ -37,7 +37,7 @@ class App extends Component {
   handleClear() {
     this.setState({
       numbers: '',
-      phonewords: []
+      phonewords: [],
     })
   }
 
@@ -45,15 +45,15 @@ class App extends Component {
     try {
       const response = await fetch(`/api/phonewords?numbers=${this.state.numbers}`)
       const phonewords = await response.json()
-      console.log(phonewords.length, phonewords)
       this.setState({phonewords})
     } catch(e) {
-      console.warn('Error occured ' + e)
-      // TODO this.setState({error: true})
+      this.setState({error: true})
     }
   }
 
   render () {
+    if (this.state.error) return <div><h2>Seems there was an error!</h2></div>
+
     return (
       <div className="wrapper">
         <NumberInput
@@ -73,5 +73,3 @@ class App extends Component {
     )
   }
 }
-
-ReactDOM.render(<App />, document.getElementById('app'))
