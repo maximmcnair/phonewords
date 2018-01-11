@@ -1,3 +1,5 @@
+![](./screenshot.png)
+
 ## Dependencies
   - [node.js](https://nodejs.org) `v7.9.0`
   - [npm](https://www.npmjs.com) `~5.3.0`
