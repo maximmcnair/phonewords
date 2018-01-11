@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import NumberPad from './components/NumberPad'
 import NumberInput from './components/NumberInput'
+import NumberClear from './components/NumberClear'
 
 class App extends Component {
   constructor() {
@@ -11,16 +12,21 @@ class App extends Component {
       numbers: '',
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleNumberClick = this.handleNumberClick.bind(this)
+    this.handleInput = this.handleInput.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+    this.handleClear = this.handleClear.bind(this)
   }
 
-  handleInputChange(numbers) {
+  handleInput(numbers) {
     this.setState({numbers})
   }
 
-  handleNumberClick(number) {
+  handleClick(number) {
     this.setState({numbers: this.state.numbers + number})
+  }
+
+  handleClear() {
+    this.setState({numbers: ''})
   }
 
   render () {
@@ -28,11 +34,16 @@ class App extends Component {
       <div>
         <NumberInput
           value={this.state.numbers}
-          handleChange={this.handleInputChange}
+          handleChange={this.handleInput}
         />
         <NumberPad
-          handleOnClick={this.handleNumberClick}
+          handleOnClick={this.handleClick}
         />
+        { this.state.numbers.length > 0 &&
+          <NumberClear
+            handleClear={this.handleClear}
+          />
+        }
       </div>
     )
   }

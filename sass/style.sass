@@ -1,21 +1,25 @@
+$color-black: #000000
 $color-white: #ffffff
 $color-highlight: #00dcf5
 
 body
-  background-color: black
+  background-color: $color-black
   color: white
   font-family: 'Roboto', sans-serif
 
 .numberpad
-  width: 600px
+  width: 90%
+  max-width: 380px
   margin: 0 auto
   text-align: center
   user-select: none
 
 .numberpad__number
-  width: 200px
+  width: 33%
   display: inline-block
   cursor: pointer
+  margin-bottom: 23px
+  transition: opacity .3s
   opacity: 1
   &:active
     opacity: 0.8
@@ -36,3 +40,24 @@ body
   border: none
   text-align: center
   margin: 20px 0px 40px 0px
+
+.numberclear__btn
+  margin: 20px auto 0 auto
+  text-align: center
+  color: $color-black
+  background: $color-white
+  padding: 6px 10px 7px 10px
+  width: 52px
+  display: block
+  border-radius: 42px
+  text-transform: uppercase
+  font-size: 13px
+  font-weight: 700
+  user-select: none
+  cursor: pointer
+  transition: opacity .3s
+  opacity: 1
+  &:hover
+    opacity: 0.9
+  &:active
+    opacity: 0.8
