@@ -1,5 +1,6 @@
-# Ignore generated js
+# Ignore generated files
 dist/bundle.js
+dist/style.css
 
 # Logs
 logs

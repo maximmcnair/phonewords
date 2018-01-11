@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import NumberPad from './components/NumberPad'
+
 const App = () => {
   return (
     <div>
-      <h1>Phonewords</h1>
+      <NumberPad />
     </div>
   )
 }

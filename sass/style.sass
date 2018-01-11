@@ -1,0 +1,25 @@
+body
+  background-color: black
+  color: white
+  font-family: 'Roboto', sans-serif
+
+.numberpad
+  width: 600px
+  margin: 0 auto
+  text-align: center
+  user-select: none
+
+.numberpad__number
+  width: 200px
+  display: inline-block
+  cursor: pointer
+  opacity: 1
+  &:active
+    opacity: 0.8
+
+.numberpad__number__text
+  font-size: 35px
+  color: #ffffff
+
+.numberpad__number__text--highlight
+  color: #00dcf5
