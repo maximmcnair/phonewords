@@ -3,14 +3,16 @@ import {shallow} from 'enzyme'
 
 import Number from './Number'
 
-it('should render number', () => {
+it('should render number and letters', () => {
   const wrapper = shallow(
     <Number
       number="3"
+      letters="def"
     />
   )
 
   expect(wrapper.contains('3')).toEqual(true)
+  expect(wrapper.contains('def')).toEqual(true)
 })
 
 it('should add hightlight class', () => {
