@@ -22,18 +22,24 @@ module.exports = function generatePhonewords(inputNumbers){
   let strs = []
   do {
     const currentNumber = numbers[index]
-    const letters = numberLetters[currentNumber]
     const newStrs = []
 
-    // make new strs
-    for(let i = 0; i < letters.length; i++) {
-      if (strs.length){
-        for (let j = strs.length - 1; j >= 0; j--) {
-          newStrs.push(strs[j] + letters[i])
+    // check number exists (other characters will make this fail)
+    if (numberLetters[currentNumber]) {
+      const letters = numberLetters[currentNumber]
+      // make new strs
+      for(let i = 0; i < letters.length; i++) {
+        if (strs.length){
+          for (let j = strs.length - 1; j >= 0; j--) {
+            newStrs.push(strs[j] + letters[i])
+          }
+        } else {
+          newStrs.push( letters[i] )
         }
-      } else {
-        newStrs.push( letters[i] )
       }
+    // if number doesn't exist (a 1, 0 or another character) then use current strings
+    } else {
+      newStrs.push(...strs)
     }
 
     strs = newStrs
