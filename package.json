@@ -20,10 +20,10 @@
   "main": "index.js",
   "scripts": {
     "sass": "node-sass sass/style.sass dist/style.css",
-    "start": "npm run sass && webpack && node index.js",
-    "test": "jest --forceExit"
+    "start": "jest --forceExit && npm run sass && webpack && node index.js",
+    "test": "jest --watch"
   },
   "jest": {
-     "setupTestFrameworkScriptFile": "./setupTests.js"
+    "setupTestFrameworkScriptFile": "./setupTests.js"
   }
 }
