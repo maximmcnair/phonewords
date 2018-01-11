@@ -20,7 +20,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "node-sass sass/style.sass dist/style.css",
-    "start": "yarn run sass && webpack && node index.js",
+    "start": "npm run sass && webpack && node index.js",
     "test": "jest --forceExit"
   },
   "jest": {

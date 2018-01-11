@@ -7,8 +7,13 @@ body
   color: white
   font-family: 'Roboto', sans-serif
 
-.numberpad
+.wrapper
   width: 90%
+  margin: 0 auto
+  max-width: 600px
+
+.numberpad
+  width: 100%
   max-width: 380px
   margin: 0 auto
   text-align: center
@@ -61,6 +66,17 @@ body
     opacity: 0.9
   &:active
     opacity: 0.8
+
+.phonewords
+  display: block
+  margin-top: 20px
+
+.phoneword
+  font-size: 12px
+  text-align: center
+  width: 10%
+  display: inline-block
+  vertical-align: top
 
 @media screen and (min-width: 460px)
   .numberinput

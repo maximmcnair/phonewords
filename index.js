@@ -17,7 +17,7 @@ app.use('/assets', express.static(path.join(__dirname, '/dist')))
 // NOTE
 // this would be moved into a db in a real project, every time app is restarted
 // cache will be destory. This also won't work across different processes.
-app.get('/phonewords', (req, res) => {
+app.get('/api/phonewords', (req, res) => {
   if (!req.query.numbers) return res.status(400).send('Error: No numbers sent')
   if (inMemoryCache[req.query.numbers]) return res.json(inMemoryCache[req.query.numbers])
   const phonewords = generatePhonewords(req.query.numbers)
